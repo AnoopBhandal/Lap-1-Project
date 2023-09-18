@@ -5,7 +5,13 @@
 //displays "correct" or "wrong" and updates score variable.
 //displays result
 //require API
-const history = require("../backend/history.json");
+// const history = require("../backend/history.json");
+// const history = import (await response(("../backend/history.json").json()))
+
+// import * as data from "../backend/history.json";
+// const history = data
+const json = []
+fetch('./content.json').then(response => json = response.json())
 
 const numOfQuestions = 2; //change this when adding HTML
 let score = 0;
@@ -32,48 +38,57 @@ let randomArray = generateRandomArray(numOfQuestions);
 //make something for selecting random questions
 //when displayQuestion is called, a random index in the range is generated and pushed into an array (indexRecord). when displayQuestion is called again, if the random index is generates is in indexRecord, it generates another index.
 
+const correctAnswer = () => { //button of correct answer is clicked
+  score++;
+  //add a message?
+  let ms = document.querySelector("#message");
+  // ms.textContent = `Correct! The answer is ${history.answer}`;
+  ms.textContent = json + "Hello world";
 
+}
+const wrongAnswer = () => {
+  let ms = document.querySelector("#message");
+  ms.textContent = `Wrong! The correct answer is ${history.answer}.` //Add something e.g. `You put ${their answer}`
+}
+correctAnswer()
 //displays question, checks answer etc.
+let i = 0;
 const askQuestion = () => {
   //displays random question and possible answers
-  let i = 0;
   const fetchQuestionData = async () => {
-      const respData = await fetch(`http://localhost:3000/history/${randomArray[i]}`);
-      console.log(await respData.json())
-      
-
-    //   console.log(fetchQuestionData())
-  
+    const respData = await fetch(`http://localhost:3000/history/${randomArray[i]}`);
+    const question = (await respData.json())
+    return question
   }
   fetchQuestionData()
   i++;
   //user selects answer
+
   //displays "correct" or "wrong" and updates score variable.
 }
-askQuestion();
-// for (let i = 0; i < numOfQuestions; i++) { //calls displayQuestion numOfQuestion times
-//   askQuestion();
-// }
+for (let i = 0; i < numOfQuestions; i++) { //calls displayQuestion numOfQuestion times
+  askQuestion();
+  
+}
 
+async function submitAnswer(){
+  const respData = await fetch(`http://localhost:3000/history/${randomArray[0]}`); 
+  const question = await (respData.json())
+  let questionAsked = document.createElement("p")
+  questionAsked.innerHTML = question[question]
+  document.body.appendChild(questionAsked)
+  let option1 = document.createElement("button")
+  option1.innerHTML = question[answer]
+  document.body.appendChild(option1)
+  let option2 = document.createElement("button")
+  option1.innerHTML = question[false1]
+  document.body.appendChild(option2)
+  let option3 = document.createElement("button")
+  option1.innerHTML = question[false2]
+  document.body.appendChild(option3)
+  let option4 = document.createElement("button")
+  option1.innerHTML = question[false3]
+  document.body.appendChild(option4)
+}
 
-
-
-//example from fruit-salad:
-// async function fetchFruitData(fruit) {
-//   try {
-//       //Make sure to replace this link with your deployed API URL in this fetch
-//       const repsData = await fetch(`https://fruitapi-ipy8.onrender.com/fruits/${fruit}`);
-//       const respImg = await fetch(
-//           `https://pixabay.com/api/?q=${fruit}+fruit&key=${apiKey}`
-//       );
-
-//       if (repsData.ok && respImg.ok) {
-//           const data = await repsData.json();
-//           const imgData = await respImg.json();
-//           addFruit(data, imgData);
-//       } else {
-//           throw "Something has gone wrong with one of the API requests";
-//       }
-//   } catch (e) {
-//       console.log(e);
-//   
+submitAnswer();
