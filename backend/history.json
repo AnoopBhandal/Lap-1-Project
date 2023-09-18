@@ -1,0 +1,16 @@
+[
+  {
+    "question": "Who was the first queen of England?",
+    "answer": "Mary I",
+    "false1": "Elizabeth I",
+    "false2": "Anne I",
+    "false3": "Victoria I"
+  },
+  {
+    "question": "What year did Queen Victoria die?",
+    "answer": 1901,
+    "false1": 1900,
+    "false2": 1902,
+    "false3": 1899
+  }
+]
