@@ -4,14 +4,19 @@
 //user selects answer
 //displays "correct" or "wrong" and updates score variable.
 //displays result
-//require API
-// const history = require("../backend/history.json");
+
+
+//NEED TO: require API
+
+
+
+
+
 // const history = import (await response(("../backend/history.json").json()))
 
 // import * as data from "../backend/history.json";
 // const history = data
-const json = []
-fetch('./content.json').then(response => json = response.json())
+
 
 const numOfQuestions = 2; //change this when adding HTML
 let score = 0;
@@ -43,7 +48,7 @@ const correctAnswer = () => { //button of correct answer is clicked
   //add a message?
   let ms = document.querySelector("#message");
   // ms.textContent = `Correct! The answer is ${history.answer}`;
-  ms.textContent = json + "Hello world";
+  ms.textContent = history;
 
 }
 const wrongAnswer = () => {
