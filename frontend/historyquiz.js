@@ -18,6 +18,7 @@ const numOfQuestions = 2; //change this when adding HTML
 let score = 0
 
 //generates an array of random indexes (for history.json) (without repetition)
+
 const generateRandomArray = async n => {
   await logHistory()
   let arr = []
@@ -32,11 +33,10 @@ const generateRandomArray = async n => {
     }
     return arr
   } else {
-    return
+    return 
   }
 }
-let randomArray = generateRandomArray(numOfQuestions)
-
+let randomArray = generateRandomArray(numOfQuestions);
 
 //edit these functions to fit HTML
 const correctAnswer = () => { //button of correct answer is clicked
@@ -44,18 +44,19 @@ const correctAnswer = () => { //button of correct answer is clicked
   //add a message?
   question.textContent = `Correct! The answer is ${history[i].answer}`;
   document.getElementById("score").innerHTML = `Score: ${score}`;
-  setTimeout(askQuestion,3500);
+  setTimeout(askQuestion,2500);
 }
 const wrongAnswer = () => {
   question.textContent = `Wrong! The correct answer is ${history[i].answer}.`; //Add something e.g. `You put ${their answer}`
-  setTimeout(askQuestion,3500);
+  setTimeout(askQuestion,2500);
 }
 
 //displays question, checks answer etc.
 let i=-1
 const askQuestion = async () => {
   await logHistory();
-
+  console.log(randomArray)
+  if (i<numOfQuestions-1) {
   i++
   //displays random question and possible answers
   document.getElementById("score").innerHTML = `Score: ${score}`;
@@ -74,20 +75,16 @@ const askQuestion = async () => {
   false1.addEventListener("click", wrongAnswer)
   false2.addEventListener("click", wrongAnswer)
   false3.addEventListener("click", wrongAnswer)
-
+  } else {
+    //finished answering questions
+    //
+    let question = document.querySelector("#question");
+    question.textContent = "finished questions";
+    let answer = document.querySelector("#quizButton1");
+    answer.remove()
+    false1.remove()
+    false2.remove()
+    false3.remove()
+  }
 }
 askQuestion();
-
-// function askQuestionsAgain (n) {
-//   for (let i=0; i<n; i++){
-//     askQuestion(i)
-//   }
-// }
-
-// askQuestionsAgain(5);
-
-
-// for (let j = 0; j <= numOfQuestions; j++) {
-//   askQuestion();
-//   setTimeout(() => {console.log("waiting")},2000)
-// }
