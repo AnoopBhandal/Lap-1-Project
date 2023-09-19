@@ -9,20 +9,12 @@
 //NEED TO: require API
 let history; //need to add async and "await logHistory()" to functions using history
 let historyLength;
-
-
 async function logHistory() {
   const response = await fetch("http://localhost:3000/history");
   history = await response.json();
   historyLength = await history.length
-
 }
 
-
-//change this when adding HTML
-let score = 0
-
-//generates an array of random indexes (for history.json) (without repetition)
 
 const numOfQuestions = 5; //change this when adding HTML
 let score = 0
@@ -33,7 +25,7 @@ let randomArray = [];
 
 const generateRandomArray = async n => { //make sure nothings asked twice
   await logHistory()
-  if (n <= numOfQuestions) {
+  if (n <= historyLength) {
     for (let i = 0; i < n; i++) {
       let a = Math.floor(Math.random() * historyLength)
       if (randomArray.includes(a)) {
