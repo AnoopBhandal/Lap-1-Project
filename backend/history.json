@@ -16,6 +16,7 @@
     "false3": 1899
   },
   {
+    "qNumber": 3,
     "question": "How many wives did Henry VIII have?",
     "answer": 6,
     "false1": 5,
@@ -23,6 +24,7 @@
     "false3": 8
   },
   {
+    "qNumber": 4,
     "question": "Francisco Franco ruled which European country from 1939 to 1975?",
     "answer": "Spain",
     "false1": "Portugal",
@@ -30,6 +32,7 @@
     "false3": "Switzerland"
   },
   {
+    "qNumber": 5,
     "question": "What type of boats did the Vikings use when exploring and raiding?",
     "answer": "Longships",
     "false1": "Short ships",
@@ -37,6 +40,7 @@
     "false3": "Galleon"
   },
   {
+    "qNumber": 6,
     "question": "What type of boats did the Vikings use when exploring and raiding?",
     "answer": "Longships",
     "false1": "Short ships",
@@ -44,6 +48,7 @@
     "false3": "Galleon"
   },
   {
+    "qNumber": 7,
     "question": "In what year was the Concorde's first flight?",
     "answer": "1969",
     "false1": "1974",
@@ -51,6 +56,7 @@
     "false3": "1979"
   },
   {
+    "qNumber": 8,
     "question": "What language was spoken in Ancient Rome?",
     "answer": "Latin",
     "false1": "Italian",
@@ -58,6 +64,7 @@
     "false3": "Ancient Egyptian"
   },
   {
+    "qNumber": 9,
     "question": "What language was spoken in Ancient Rome?",
     "answer": "Latin",
     "false1": "Italian",
@@ -65,6 +72,7 @@
     "false3": "Ancient Egyptian"
   },
   {
+    "qNumber": 10,
     "question": "Which 3 countries made up the Triple Entente in World War I?",
     "answer": "Great Britain, France & Russia",
     "false1": "England, Scotland & Wales",
@@ -72,6 +80,7 @@
     "false3": "Great Britain, Spain & United States of America"
   },
   {
+    "qNumber": 11,
     "question": "In what year did the Berlin Wall fall?",
     "answer": "1989",
     "false1": "1969",
@@ -79,6 +88,7 @@
     "false3": "1975"
   },
   {
+    "qNumber": 12,
     "question": "The Hindenburg Disaster involved what type of German airship?",
     "answer": "Zeppelin",
     "false1": "Hot Air Ballon",
@@ -86,6 +96,7 @@
     "false3": "ornithopter"
   },
   {
+    "qNumber": 13,
     "question": "The Hindenburg Disaster involved what type of German airship?",
     "answer": "Zeppelin",
     "false1": "Hot Air Ballon",
@@ -93,6 +104,7 @@
     "false3": "ornithopter"
   },
   {
+    "qNumber": 14,
     "question": "Which of these countries did NOT fight in WWII?",
     "answer": "Ireland",
     "false1": "Finland",
@@ -100,6 +112,7 @@
     "false3": "France"
   },
   {
+    "qNumber": 15,
     "question": "What was the name of the American effort to build an atomic bomb?",
     "answer": "Manhattan Project",
     "false1": "Fat boy Project",
@@ -107,6 +120,7 @@
     "false3": "Baltimore Project"
   },
   {
+    "qNumber": 16,
     "question": "After what event did America join the war?",
     "answer": "Pearl Harbour",
     "false1": "Dunkirk",
@@ -114,6 +128,7 @@
     "false3": "Paris falling to the Nazis"
   },
   {
+    "qNumber": 17,
     "question": "How long was queen elizabeth reign?",
     "answer": "70 Years",
     "false1": "75 Years",
@@ -121,6 +136,7 @@
     "false3": "64 Years"
   },
   {
+    "qNumber": 18,
     "question": "How many years did the Hundred Years' War last?",
     "answer": "116",
     "false1": "100",
@@ -128,6 +144,7 @@
     "false3": "98"
   },
   {
+    "qNumber": 19,
     "question": "Leonardo da Vinci, Michelangelo and Raphael all belong to which historical art period?",
     "answer": "Renaissance",
     "false1": "Surrealism",
@@ -135,6 +152,7 @@
     "false3": "Mesozoic"
   },
   {
+    "qNumber": 20,
     "question": "Which country was ruled by Shoguns from 1185 to 1868?",
     "answer": "Japan",
     "false1": "China",
