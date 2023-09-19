@@ -1,0 +1,72 @@
+[
+    {
+        "question": "What is the largest ocean in the world?",
+        "answer": "Pacific Ocean",
+        "false1": "Atlantic",
+        "false2": "Arctic",
+        "false3": "Indian"
+    },
+    {
+        "question": "Which continent is the largest in terms of area?",
+        "answer": "Asia",
+        "false1": "Europe",
+        "false2": "Africa",
+        "false3": "Antarctica"
+    },
+    {
+        "question": "What is the smallest country in the world?",
+        "answer": "Vatican City",
+        "false1": "Monaco",
+        "false2": "San Marino",
+        "false3": "Minorca"
+    },
+    {
+        "question": "What is the world's tallest mountain?",
+        "answer": "Mauna Kea",
+        "false1": "Mount Everest",
+        "false2": "Kangchenjunga",
+        "false3": "Mount Tenpō"
+    },
+    {
+        "question": "In which city is the world's tallest building located?",
+        "answer": "Dubai",
+        "false1": "New York",
+        "false2": "Shanghai",
+        "false3": "Mecca"
+    },
+    {
+        "question": "Which country is the most linguistically diverse in the world?",
+        "answer": "Papua New Guinea",
+        "false1": "China",
+        "false2": "Hungary",
+        "false3": "Liechtenstein"
+    },
+    {
+        "question": "Which African country is home to the most pyramids in the world?",
+        "answer": "Sudan",
+        "false1": "Egypt",
+        "false2": "Tanzania",
+        "false3": "Kenya"
+    },
+    {
+        "question": "What is the only country that shares land borders with the United Kingdom?",
+        "answer": "The Republic of Ireland",
+        "false1": "France",
+        "false2": "Isle of Wight",
+        "false3": "Isle of Skye"
+    },
+    {
+        "question": "How many oceans are there on Earth?",
+        "answer": "5",
+        "false1": "7",
+        "false2": "4",
+        "false3": "6"
+    },
+    {
+        "question": "What is the largest and longest river in Europe?",
+        "answer": "The Volga",
+        "false1": "The Nile",
+        "false2": "Danube River",
+        "false3": "Yangtze River"
+    }
+]
