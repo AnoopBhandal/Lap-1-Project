@@ -1,0 +1,82 @@
+[
+    {
+        "qNumber": 1,
+        "question": "What is the lightness or darkness of a color is?",
+        "answer": "Value",
+        "false1": "Texture",
+        "false2": "Colour",
+        "false3": "Shape"
+    },
+    {
+        "qNumber": 2,
+        "question": "What refers to the way something feels or looks as if it might feel like something?",
+        "answer": "Texture",
+        "false1": "Space",
+        "false2": "Value",
+        "false3": "Line"
+    },
+    {
+        "qNumber": 3,
+        "question": "When lines meet to form an enclosed area, this forms?",
+        "answer": "A Shape",
+        "false1": "A Space",
+        "false2": "A Form",
+        "false3": "A Line"
+    },
+    {
+        "qNumber": 4,
+        "question": "This is an empty place or surface in or around a work of art. It can be two-dimensional, three-dimensional, negative, and/or positive.",
+        "answer": "Space",
+        "false1": "Colour",
+        "false2": "Shape",
+        "false3": "Value"
+    },
+    {
+        "qNumber": 5,
+        "question": "This is the most basic element of art. It is used to form lots of different things in art. It is the path of a dot through a space.",
+        "answer": "Line",
+        "false1": "Value",
+        "false2": "Space",
+        "false3": "Texture"
+    },
+    {
+        "qNumber": 6,
+        "question": "They are three-dimensional—they have height, width, and thickness.",
+        "answer": "Form",
+        "false1": "Shape",
+        "false2": "Colour",
+        "false3": "Value"
+    },
+    {
+        "qNumber": 7,
+        "question": "This is what we see as light waves are absorbed or reflected by everything around us.",
+        "answer": "Colour",
+        "false1": "Space",
+        "false2": "Value",
+        "false3": "Line"
+    },
+    {
+        "qNumber": 8,
+        "question": "Which of these is not an element of art?",
+        "answer": "Balance",
+        "false1": "Texture",
+        "false2": "Line",
+        "false3": "Colour"
+    },
+    {
+        "qNumber": 9,
+        "question": "Pink is an example of which element?",
+        "answer": "Colour",
+        "false1": "Texture",
+        "false2": "Line",
+        "false3": "Value"
+    },
+    {
+        "qNumber": 10,
+        "question": "Rough is an example of which element?",
+        "answer": "Texture",
+        "false1": "Value",
+        "false2": "Colour",
+        "false3": "Shape"
+    }
+]
