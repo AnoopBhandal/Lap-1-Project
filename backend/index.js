@@ -10,8 +10,9 @@ app.use(express.json());
 const generateRandomIndex = () => Math.floor(Math.random() * history.length);
 
 app.get("/", (req, res) =>{
-    res.send("History API")
+    res.send("Quiz APIs")
 })
+
 //GET all
 app.get("/history", (req, res) =>{
     res.send(history)
@@ -41,3 +42,12 @@ app.post("/history", (req,res)=> {
 app.listen(port, ()=>{
     console.log(`Server is now listening on port ${port}`)
 })
+
+
+//exporting function for testing purpose
+
+module.exports={
+  generateRandomIndex,
+  app,
+  history
+}
