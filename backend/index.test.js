@@ -1,4 +1,4 @@
-const {generateRandomIndex, app, history, getSubjectName, geography} = require("./index")
+const {generateRandomIndex, app, history, getSubjectName, geography, subjArr} = require("./index")
 const request = require('supertest');
 
 
@@ -60,41 +60,61 @@ describe('GET /', () => {
     });
   });
 
-//test for GET /history
-describe('GET /history', () => {
-    it('responds with all history.json file data', async () => {
-      const response = await request(app).get('/history'); 
+  
+//test for GET /subject 
+describe('GET /:subject', () => {
+  for (let i = 0; i < subjArr.length; i++){
+    it(`responds with all ${subjArr[i]}.json file data`, async () => {
+      const response = await request(app).get(`/${subjArr[i]}`); 
       expect(response.status).toBe(200); 
-
-      const dataReceived = history
-      expect(response.body).toEqual(dataReceived)
-    });
-  });
-
-//test for GET /history/random
-describe('GET /history/random', () => {
-    it('responds with a random question from history.json. Checks by confirming expected and received is of same length', async () => {
-      const response = await request(app).get('/history/random'); 
-      expect(response.status).toBe(200);
   
-      const randomQuestion = response.body; // What im getting
-      const expectedRandomQuestion = history[generateRandomIndex(history)] //What im expecting to get [generateRandomIndex()]
-
-      expect(randomQuestion.length).toEqual(expectedRandomQuestion.length) // so if the two match then we are good. Test is passed.
+      const resultReceived = response.body
+      const expectedResult = getSubjectName(subjArr[i])
+      expect(resultReceived).toEqual(expectedResult)
     });
-  });
+  }
+});
 
-describe('GET /history/:id', () => {
-    it('responds with the question of the index inputted from history.json', async () => {
-      const response = await request(app).get('/history/random'); 
+
+
+//test for GET /:subject/random
+describe('GET /:subject/random', () => {
+  for (let i = 0; i < subjArr.length; i++) {
+    it(`responds with a random question from ${subjArr[i]}.json.`, async () => {
+      const response = await request(app).get(`/${subjArr[i]}/random`); 
       expect(response.status).toBe(200);
-  
-      const randomQuestion = response.body; // What im getting
-      const expectedRandomQuestion = history[generateRandomIndex()] //What im expecting to get
 
-      expect(randomQuestion).toEqual(expectedRandomQuestion) // so if the two match then we are good. Test is passed.
+      const subject = getSubjectName(subjArr[i])
+      const randomQuestion = response.body; // What im getting
+      const expectedRandomQuestion = subject[generateRandomIndex(subject)] //What im expecting to get [generateRandomIndex()]
+
+      expect(randomQuestion.length).toEqual(expectedRandomQuestion.length) // so if the two match in length then we are good. Test is passed.
     });
-  });
+  }
+});
+
+
+
+
+describe('GET /:subject/:userInputIndex', () => {
+  for(let i = 0; i < subjArr.length; i++){
+    let subject= getSubjectName(subjArr[i])
+    for (let j=0; j < subject.length; j++){
+      it(`responds with the question index ${j} from subject ${subjArr[i]} when :userInputIndex = ${j}`, async () => {
+        const response = await request(app).get(`/${subjArr[i]}/${j}`); 
+        expect(response.status).toBe(200);
+    
+        const resultReceived = response.body; // What im getting
+        const expectedResult = subject[j] //What im expecting to get
+  
+        expect(resultReceived).toEqual(expectedResult) // so if the two match then we are good. Test is passed.
+      });
+      
+    }
+  }
+});
+
+
 
 
 
