@@ -81,6 +81,7 @@ module.exports={
   app,
   history,
   getSubjectName,
-  geography
+  geography,
+  subjArr
 }
 
