@@ -35,10 +35,7 @@ const generateRandomArray = async n => {
     return
   }
 }
-let randomArray = generateRandomArray(numOfQuestions);
-
-
-
+let randomArray = generateRandomArray(numOfQuestions)
 
 
 //edit these functions to fit HTML
@@ -47,19 +44,19 @@ const correctAnswer = () => { //button of correct answer is clicked
   //add a message?
   question.textContent = `Correct! The answer is ${history[i].answer}`;
   document.getElementById("score").innerHTML = `Score: ${score}`;
-  // setTimeout(return, 3000)
+  setTimeout(askQuestion,3500);
 }
 const wrongAnswer = () => {
-  question.textContent = `Wrong! The correct answer is ${history[i].answer}.` //Add something e.g. `You put ${their answer}`
-  // setTimeout(return, 3000)
+  question.textContent = `Wrong! The correct answer is ${history[i].answer}.`; //Add something e.g. `You put ${their answer}`
+  setTimeout(askQuestion,3500);
 }
 
 //displays question, checks answer etc.
 let i=-1
 const askQuestion = async () => {
   await logHistory();
+
   i++
-  // if (i<=numOfQuestions) {
   //displays random question and possible answers
   document.getElementById("score").innerHTML = `Score: ${score}`;
   let question = document.querySelector("#question");
@@ -77,28 +74,20 @@ const askQuestion = async () => {
   false1.addEventListener("click", wrongAnswer)
   false2.addEventListener("click", wrongAnswer)
   false3.addEventListener("click", wrongAnswer)
-  // }
-}
-askQuestion()
 
-// async function submitAnswer(){
-//   const respData = await fetch(`http://localhost:3000/history/${randomArray[0]}`);
-//   const question = await (respData.json())
-//   let questionAsked = document.createElement("p")
-//   questionAsked.innerHTML = question[question]
-//   document.body.appendChild(questionAsked)
-//   let option1 = document.createElement("button")
-//   option1.innerHTML = question[answer]
-//   document.body.appendChild(option1)
-//   let option2 = document.createElement("button")
-//   option1.innerHTML = question[false1]
-//   document.body.appendChild(option2)
-//   let option3 = document.createElement("button")
-//   option1.innerHTML = question[false2]
-//   document.body.appendChild(option3)
-//   let option4 = document.createElement("button")
-//   option1.innerHTML = question[false3]
-//   document.body.appendChild(option4)
+}
+askQuestion();
+
+// function askQuestionsAgain (n) {
+//   for (let i=0; i<n; i++){
+//     askQuestion(i)
+//   }
 // }
 
-// submitAnswer();
+// askQuestionsAgain(5);
+
+
+// for (let j = 0; j <= numOfQuestions; j++) {
+//   askQuestion();
+//   setTimeout(() => {console.log("waiting")},2000)
+// }
