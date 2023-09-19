@@ -1,5 +1,6 @@
 [
   {
+    "qNumber" : 1,
     "question": "Who was the first queen of England?",
     "answer": "Mary I",
     "false1": "Elizabeth I",
@@ -7,10 +8,137 @@
     "false3": "Victoria I"
   },
   {
+    "qNumber": 2,
     "question": "What year did Queen Victoria die?",
     "answer": 1901,
     "false1": 1900,
     "false2": 1902,
     "false3": 1899
+  },
+  {
+    "question": "How many wives did Henry VIII have?",
+    "answer": 6,
+    "false1": 5,
+    "false2": 4,
+    "false3": 8
+  },
+  {
+    "question": "Francisco Franco ruled which European country from 1939 to 1975?",
+    "answer": "Spain",
+    "false1": "Portugal",
+    "false2": "France",
+    "false3": "Switzerland"
+  },
+  {
+    "question": "What type of boats did the Vikings use when exploring and raiding?",
+    "answer": "Longships",
+    "false1": "Short ships",
+    "false2": "Sail Boats",
+    "false3": "Galleon"
+  },
+  {
+    "question": "What type of boats did the Vikings use when exploring and raiding?",
+    "answer": "Longships",
+    "false1": "Short ships",
+    "false2": "Sail Boats",
+    "false3": "Galleon"
+  },
+  {
+    "question": "In what year was the Concorde's first flight?",
+    "answer": "1969",
+    "false1": "1974",
+    "false2": "1965",
+    "false3": "1979"
+  },
+  {
+    "question": "What language was spoken in Ancient Rome?",
+    "answer": "Latin",
+    "false1": "Italian",
+    "false2": "Ancient Greece",
+    "false3": "Ancient Egyptian"
+  },
+  {
+    "question": "What language was spoken in Ancient Rome?",
+    "answer": "Latin",
+    "false1": "Italian",
+    "false2": "Ancient Greece",
+    "false3": "Ancient Egyptian"
+  },
+  {
+    "question": "Which 3 countries made up the Triple Entente in World War I?",
+    "answer": "Great Britain, France & Russia",
+    "false1": "England, Scotland & Wales",
+    "false2": "Great Britain, France & Germany",
+    "false3": "Great Britain, Spain & United States of America"
+  },
+  {
+    "question": "In what year did the Berlin Wall fall?",
+    "answer": "1989",
+    "false1": "1969",
+    "false2": "1979",
+    "false3": "1975"
+  },
+  {
+    "question": "The Hindenburg Disaster involved what type of German airship?",
+    "answer": "Zeppelin",
+    "false1": "Hot Air Ballon",
+    "false2": "Blimp",
+    "false3": "ornithopter"
+  },
+  {
+    "question": "The Hindenburg Disaster involved what type of German airship?",
+    "answer": "Zeppelin",
+    "false1": "Hot Air Ballon",
+    "false2": "Blimp",
+    "false3": "ornithopter"
+  },
+  {
+    "question": "Which of these countries did NOT fight in WWII?",
+    "answer": "Ireland",
+    "false1": "Finland",
+    "false2": "India",
+    "false3": "France"
+  },
+  {
+    "question": "What was the name of the American effort to build an atomic bomb?",
+    "answer": "Manhattan Project",
+    "false1": "Fat boy Project",
+    "false2": "Doomsday",
+    "false3": "Baltimore Project"
+  },
+  {
+    "question": "After what event did America join the war?",
+    "answer": "Pearl Harbour",
+    "false1": "Dunkirk",
+    "false2": "The Blitz",
+    "false3": "Paris falling to the Nazis"
+  },
+  {
+    "question": "How long was queen elizabeth reign?",
+    "answer": "70 Years",
+    "false1": "75 Years",
+    "false2": "80 Years",
+    "false3": "64 Years"
+  },
+  {
+    "question": "How many years did the Hundred Years' War last?",
+    "answer": "116",
+    "false1": "100",
+    "false2": "76",
+    "false3": "98"
+  },
+  {
+    "question": "Leonardo da Vinci, Michelangelo and Raphael all belong to which historical art period?",
+    "answer": "Renaissance",
+    "false1": "Surrealism",
+    "false2": "Post-Impressionism",
+    "false3": "Mesozoic"
+  },
+  {
+    "question": "Which country was ruled by Shoguns from 1185 to 1868?",
+    "answer": "Japan",
+    "false1": "China",
+    "false2": "Egypt",
+    "false3": "Tunisia"
   }
 ]
