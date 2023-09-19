@@ -15,33 +15,27 @@ async function logHistory() {
   historyLength = await history.length
 }
 
-
-const numOfQuestions = 5; //change this when adding HTML
 let score = 0
 
 //generates an array of random indexes (for history.json) (without repetition)
 
-let randomArray = [];
-
-const generateRandomArray = async n => { //make sure nothings asked twice
+let randomArray;
+const generateRandomArray = async () =>{
   await logHistory()
-  if (n <= historyLength) {
-    for (let i = 0; i < n; i++) {
-      let a = Math.floor(Math.random() * historyLength)
-      if (randomArray.includes(a)) {
-        i -= 1
-      } else {
-        randomArray.push(a)
-      }
-    }
-    return randomArray
-  } else {
-    return
+  let arr = []
+  for (let i=0; i<historyLength; i++){
+    arr.push(i)
   }
+  for (let i =arr.length -1; i>0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+  }
+  randomArray = arr;
 }
-generateRandomArray(numOfQuestions);
+generateRandomArray()
 
-//edit these functions to fit HTML
 const correctAnswer = () => { //button of correct answer is clicked
   score++;
   //add a message?
@@ -55,7 +49,7 @@ const correctAnswer = () => { //button of correct answer is clicked
   false2.hidden = true
   let false3 = document.querySelector("#quizButton4");
   false3.hidden = true
-  setTimeout(askQuestion, 2000);
+  setTimeout(askQuestion, 1500);
 }
 const wrongAnswer = () => {
   question.textContent = `Wrong! The correct answer is ${history[randomArray[i]].answer}. You got ${score} questions correct!`; //Add something e.g. `You put ${their answer}`
@@ -80,10 +74,12 @@ const wrongAnswer = () => {
 
 
 //displays question, checks answer etc.
-let i = -1
+let i = -1;
+let j;
 const askQuestion = async () => {
   await logHistory();
-  if (i < numOfQuestions - 1) {
+  j = Math.floor(Math.random()*historyLength);
+  if (i < historyLength - 1) {
     i++
     //displays random question and possible answers
     document.getElementById("score").innerHTML = `Score: ${score}`;
