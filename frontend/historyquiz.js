@@ -7,13 +7,20 @@
 
 
 //NEED TO: require API
-let history; //need to add async and "await logHistory()" to functions using history
-let historyLength;
-async function logHistory() {
-  const response = await fetch("http://localhost:3000/history");
-  history = await response.json();
-  historyLength = await history.length
+
+const searchParams = new URLSearchParams(window.location.search);
+const subjectStr = (searchParams.get('subject')); 
+let subjectLength;
+let subJson;
+
+
+
+async function logSubject(subject){
+  const response = await fetch (`http://localhost:3000/${subject}`)
+  subJson = await response.json()
+  subjectLength = await subJson.length;
 }
+
 
 let score = 0
 
@@ -21,9 +28,9 @@ let score = 0
 
 let randomArray;
 const generateRandomArray = async () =>{
-  await logHistory()
-  let arr = []
-  for (let i=0; i<historyLength; i++){
+  await logSubject(subjectStr)
+  let arr = [] 
+  for (let i=0; i<subjectLength; i++){ //changed length thing here
     arr.push(i)
   }
   for (let i =arr.length -1; i>0; i--){
@@ -39,7 +46,7 @@ generateRandomArray()
 const correctAnswer = () => { //button of correct answer is clicked
   score++;
   //add a message?
-  question.textContent = `Correct! The answer is ${history[randomArray[i]].answer}`;
+  question.textContent = `Correct! The answer is ${subJson[randomArray[i]].answer}`;
   document.getElementById("score").innerHTML = `Score: ${score}`;
   let answer = document.querySelector("#quizButton1");
   answer.hidden = true
@@ -52,7 +59,7 @@ const correctAnswer = () => { //button of correct answer is clicked
   setTimeout(askQuestion, 1500);
 }
 const wrongAnswer = () => {
-  question.textContent = `Wrong! The correct answer is ${history[randomArray[i]].answer}. You got ${score} questions correct!`; //Add something e.g. `You put ${their answer}`
+  question.textContent = `Wrong! The correct answer is ${subJson[randomArray[i]].answer}. You got ${score} questions correct!`; //Add something e.g. `You put ${their answer}`
   let answer = document.querySelector("#quizButton1");
   answer.remove()
   let false1 = document.querySelector("#quizButton2");
@@ -77,25 +84,25 @@ const wrongAnswer = () => {
 let i = -1;
 let j;
 const askQuestion = async () => {
-  await logHistory();
-  j = Math.floor(Math.random()*historyLength);
-  if (i < historyLength - 1) {
+  await logSubject(subjectStr);
+  j = Math.floor(Math.random()*subjectLength);
+  if (i < subjectLength - 1) {
     i++
     //displays random question and possible answers
     document.getElementById("score").innerHTML = `Score: ${score}`;
     let question = document.querySelector("#question");
-    question.textContent = history[randomArray[i]].question;
+    question.textContent = subJson[randomArray[i]].question;
     let answer = document.querySelector("#quizButton1");
-    answer.textContent = history[randomArray[i]].answer;
+    answer.textContent = subJson[randomArray[i]].answer;
     answer.hidden = false
     let false1 = document.querySelector("#quizButton2");
-    false1.textContent = history[randomArray[i]].false1;
+    false1.textContent = subJson[randomArray[i]].false1;
     false1.hidden = false
     let false2 = document.querySelector("#quizButton3");
-    false2.textContent = history[randomArray[i]].false2;
+    false2.textContent = subJson[randomArray[i]].false2;
     false2.hidden = false
     let false3 = document.querySelector("#quizButton4");
-    false3.textContent = history[randomArray[i]].false3;
+    false3.textContent = subJson[randomArray[i]].false3;
     false3.hidden = false
     //user selects answer displays "correct" or "wrong" and updates score variable.
     answer.addEventListener("click", correctAnswer)
