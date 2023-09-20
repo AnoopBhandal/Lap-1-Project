@@ -20,8 +20,28 @@ body {
   object-fit: contain;
 }
 
-#quizButtons {
-  font-size: 2rem;
-  padding: 20px 200px; /* Adjust padding as needed */
+.btn{
+  width: 100%;
+  padding: 5%;
+  margin: 2%;
 }
 
+.row{
+  padding: 4%;
+}
+
+.answer-boxes a{
+  display: flex;
+  font-size: 50px;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+}
+
+#score {
+  font-size: 70px;
+}
+
+#answerContainer{
+  background-image: url(parchment-paper-background-vrkkolsv6wuzovg0.jpg);
+}
