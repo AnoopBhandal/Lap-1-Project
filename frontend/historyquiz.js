@@ -157,6 +157,6 @@ const updateCountdown = () => {
 setInterval(updateCountdown, 1000);
 
 module.exports = {
-  logHistory,
+  logSubject,
   generateRandomArray
 }

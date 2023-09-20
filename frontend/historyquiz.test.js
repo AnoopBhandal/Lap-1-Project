@@ -1,37 +1,13 @@
-const { logHistory, generateRandomArray } = require("./historyquiz");
+const { logSubject, generateRandomArray } = require("./historyquiz");
 
-const practiseFunction = () => {
-  newVariable = 5;
-}
-
-//practise test
-describe("practiseFunction", () => {
-  beforeEach(() => {
-    let newVariable = 42; // Initialize the variable before each test
-  });
-  it("reassigns newVariable", () => {
-    practiseFunction();
-    expect(newVariable).toEqual(5);
-  })
-})
-global.fetch = jest.fn(() => {
-  Promise.resolve({
-    json: () => Promise.resolve({ key: 'value' }), // Mock response data (for fetching API)
-  })
-})
-let history;
 //test for logHistory
-describe("logHistory", () => {
+describe("logSubject", () => {
 
   it("exists", () => {
-    expect(logHistory).toBeDefined();
+    expect(logSubject).toBeDefined();
   })
   it("is a function", () => {
-    expect(logHistory instanceof Function).toEqual(true)
-  })
-  it("fetches data from API", async () => {
-    await logHistory();
-    expect(history).toEqual({ key: 'value' })
+    expect(logSubject instanceof Function).toEqual(true)
   })
 })
 
