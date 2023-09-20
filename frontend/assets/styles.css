@@ -63,9 +63,12 @@ height: 100%;
   width: 45%;
   height: 100%;
 }
+
 .row{
 padding: 4%;
 }
+
+
 .answer-boxes a{
   display: flex;
   font-size: 50px;
