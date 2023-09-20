@@ -200,6 +200,6 @@ backgroundChange.style.backgroundImage = `url(${backgroundImageURL})`
 
 
 module.exports = {
-  logHistory,
+  logSubject,
   generateRandomArray
 };

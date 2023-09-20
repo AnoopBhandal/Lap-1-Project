@@ -1,9 +1,10 @@
 body {
-  background: url(background.jpg);
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+    background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("background.jpg");    
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
 .card-img-top{
   height: 200px;
   object-fit: cover;
@@ -16,32 +17,62 @@ object-fit: cover;
 height: 400px;
 object-fit: contain;
 }
-#answerContainer{
-display: flex;
-width: 100%;
-height: 30%;
-padding: 3%;
-margin: 2%;
-}
+
 #answerContainer .btn{
 width: 45%;
 height: 100%;
+=======
+
+.bg-body-tertiary{
+  background-color: blue;
+  border: 5px black solid;
+  padding: 0;
+  margin: 0;
+}
+
+.card{
+  border: 2px solid black;
+}
+
+
+.duration-link{
+  display: flex;
+  height: 100%;
+  font-size: 25px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 0;
+  background-color: burlywood;
+  border: 2px solid black;
+}
+
+
+#answerContainer{
+  display: flex;
+  width: 100%;
+  height: 30%;
+  padding: 3%;
+  margin: 2%;
+  background-repeat: no-repeat;
+  background-size: cover;
+    
+}
+
+#answerContainer .btn{
+  width: 45%;
+  height: 100%;
 }
 .row{
 padding: 4%;
 }
 .answer-boxes a{
-display: flex;
-font-size: 50px;
-text-align: center;
-align-content: center;
-align-items: center;
-justify-content: center;
+  display: flex;
+  font-size: 50px;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
 }
-#score {
-font-size: 70px;
-}
-#answerContainer{
-background-repeat: no-repeat;
-background-size: cover;
-}
+
+
