@@ -19,7 +19,7 @@ let score = 0
 
 //generates an array of random indexes (for history.json) (without repetition)
 
-let randomArray;
+let randomArray = [];
 const generateRandomArray = async () =>{
   await logHistory()
   let arr = []
@@ -128,3 +128,7 @@ const askQuestion = async () => {
 }
 askQuestion();
 
+module.exports = {
+  logHistory,
+  generateRandomArray
+}
