@@ -14,7 +14,6 @@ let subjectLength;
 let subJson;
 
 
-
 async function logSubject(subject){
   const response = await fetch (`http://localhost:3000/${subject}`)
   subJson = await response.json()
@@ -134,4 +133,25 @@ const askQuestion = async () => {
   }
 }
 askQuestion();
+
+//Adding a timer:
+
+const startingMinutes = 20;
+time = startingMinutes*60;
+
+const countdownEl = document.getElementById('countdown') 
+
+const updateCountdown = () => {
+  const minutes = Math.floor(time/60);
+  let seconds = time % 60;
+
+  seconds = seconds < 10 ? '0' + seconds:seconds;
+
+  countdownEl.innerHTML = `Timer: ${minutes}:${seconds}`
+  document.getElementById('countdown').style.font = "bold 30px arial,serif";
+
+  time--;
+}
+
+setInterval(updateCountdown, 1000);
 

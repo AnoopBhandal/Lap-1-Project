@@ -44,4 +44,6 @@ body {
 
 #answerContainer{
   background-image: url(parchment-paper-background-vrkkolsv6wuzovg0.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
