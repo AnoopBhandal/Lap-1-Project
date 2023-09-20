@@ -34,32 +34,33 @@
         <div class="py-4 mb-4 bg-body-tertiary rounded-3 text-center"> 
           <div class="container">
             <div class="row">
-                <h1 class="display-5 fw-bold">Score</h1> 
+                <h1 class="display-5 fw-bold">Question:</h1> 
               </div>
             </div>
           </div>
         </div>
 
         <div class="container py-4">
-            <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+            <div class="p-5 mb-4 bg-body-tertiary rounded-3" id="answerContainer">
               <div class="container">           
                 <h1 class="pb-4 display-5 fw-bold text-center" id="question">Questions</h1>
                 <div class="row">
-                    <div class="text-left mb-3 d-flex justify-content-around" id="buttonDiv">
-                        <a id = "quizButton1" href="#" class="btn btn-primary mt-auto">Answer A</a>
+                    <div class="mb-3 d-flex justify-content-around answer-boxes" id="buttonDiv">
+                        <a id = "quizButton1" href="#" class="btn btn-primary">Answer A</a>
 
-                        <a id = "quizButton2" href="#" class="btn btn-primary mt-auto">Answer B</a>
+                        <a id = "quizButton2" href="#" class="btn btn-primary">Answer B</a>
                     </div>
-                    <div class="d-flex justify-content-around">
-                        <a id = "quizButton3" href="#" class="btn btn-primary mt-auto">Answer C</a>
+                    <div class="d-flex mb-3 justify-content-around answer-boxes">
+                        <a id = "quizButton3" href="#" class="btn btn-primary">Answer C</a>
 
-                        <a id = "quizButton4" href="#" class="btn btn-primary mt-auto">Answer D</a>  
+                        <a id = "quizButton4" href="#" class="btn btn-primary">Answer D</a>  
                     </div>
 
                     <div>
                       <p id="score" class="text-center py-5">
-                        Score 
+                        Score:
                       </p>
+                      <p id="countdown" class="text-center py-2"></p>
                     </div>
 
                 </div>
