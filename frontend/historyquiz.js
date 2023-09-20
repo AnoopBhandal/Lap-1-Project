@@ -25,7 +25,7 @@ let score = 0
 
 //generates an array of random indexes (for history.json) (without repetition)
 
-let randomArray;
+let randomArray = [];
 const generateRandomArray = async () =>{
   await logSubject(subjectStr)
   let arr = [] 
@@ -134,6 +134,7 @@ const askQuestion = async () => {
 }
 askQuestion();
 
+
 //Adding a timer:
 
 const startingMinutes = 20;
@@ -155,3 +156,7 @@ const updateCountdown = () => {
 
 setInterval(updateCountdown, 1000);
 
+module.exports = {
+  logHistory,
+  generateRandomArray
+}
