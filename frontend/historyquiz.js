@@ -14,6 +14,9 @@ let subjectLength;
 let subJson;
 
 
+
+
+
 async function logSubject(subject){
   const response = await fetch (`http://localhost:3000/${subject}`)
   subJson = await response.json()
@@ -124,10 +127,11 @@ const askQuestion = async () => {
     //add two buttons (with links for play again and home)
     let myDiv = document.getElementById("buttonDiv")
     let restartButton = document.createElement("button")
+
     let text = document.createTextNode("Restart")
     restartButton.appendChild(text)
     myDiv.appendChild(restartButton)
-    restartButton.style.backgroundColor = "blue";
+    restartButton.style.backgroundColor = "red";
     restartButton.addEventListener("click", ()=> {location.reload(true)})
     
   }
@@ -156,7 +160,46 @@ const updateCountdown = () => {
 
 setInterval(updateCountdown, 1000);
 
+//Adjusting background image based on choice of game
+const answerButtons = document.querySelectorAll('.answer-boxes a')
+
+
+
+let backgroundImageURL;
+
+if (subjectStr == "history") {
+  backgroundImageURL = "./assets/parchment-paper-background-vrkkolsv6wuzovg0.jpg";
+  
+  answerButtons.forEach((anchor) => {
+    anchor.style.backgroundColor = '#00008B'
+    anchor.style.borderColor = '#00008B'
+  });
+
+} else if (subjectStr == "geography"){
+  backgroundImageURL = "./assets/geographyBG.jpg"
+
+  answerButtons.forEach((anchor) => {
+    anchor.style.backgroundColor = '#DC143C'
+    anchor.style.borderColor = '#DC143C'
+  });
+  
+} else if (subjectStr == "art"){
+  backgroundImageURL = "./assets/art.jpg"
+
+  answerButtons.forEach((anchor) => {
+    anchor.style.backgroundColor = '#4B0082'
+    anchor.style.borderColor = '#4B0082'
+  });
+}
+
+const backgroundChange = document.getElementById("answerContainer")
+backgroundChange.style.backgroundImage = `url(${backgroundImageURL})`
+
+ 
+
+
+
 module.exports = {
   logSubject,
   generateRandomArray
-}
+};
