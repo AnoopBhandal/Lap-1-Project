@@ -1,21 +1,21 @@
 # Lap-1-Project: Educational Quiz Game
 
-##Project Description
+## Project Description
 
-##Installation & Usage
-###Installation
+## Installation & Usage
+### Installation
 
-###Usage
+### Usage
 
-##Technologies
+## Technologies
 
-##Process
+## Process
 
-##Screenshots/Images
-##Wins & Challenges
+## Screenshots/Images
+## Wins & Challenges
 
-##Badges
-##Contribution Guide
-##Code Snippets
-##Bugs
-##Future Features
+## Badges
+## Contribution Guide
+## Code Snippets
+## Bugs
+## Future Features
