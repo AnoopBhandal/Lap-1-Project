@@ -43,6 +43,7 @@ An educational multiple choice game, aimed at secondary school, non-STEM student
 
 ## Future Features
 - In the future, we would add a second type of quiz. This would be a speed quiz where the user aims to answer as many questions as possible in a given time.
+- It would be quite easy to add new subjects.
 
 ## Badges
 ## Contribution Guide
