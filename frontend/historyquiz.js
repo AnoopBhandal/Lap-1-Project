@@ -148,18 +148,7 @@ const askQuestion = async () => {
         el.style.backgroundColor = '#4B0082'
         el.style.borderColor = '#4B0082'})
     }
-    
-    // if (subjectStr == "history") {
-    //   buttonArr.forEach((el) =>
-    //   el.style.backgroundColor = '#00008B';
-    //   el.style.borderColor = '#00008B')
-    // } else if (subjectStr == "geography") {
-  //     buttonArr.forEach((el)=> el.style.backgroundColor = '#DC143C'
-  //     el.style.borderColor = '#DC143C')
-  //  } else if (subjectStr == "art") {
-  //     buttonArr.forEach((el)=> el.style.backgroundColor = '#4B0082'
-  //     el.style.borderColor = '#4B0082')
-  //   }
+
     let answerText = document.createTextNode(subJson[randomArray[i]].answer)
     let false1Text = document.createTextNode(subJson[randomArray[i]].false1)
     let false2Text = document.createTextNode(subJson[randomArray[i]].false2)
@@ -261,22 +250,10 @@ const answerButtons = document.querySelectorAll('.answer-boxes a')
 let backgroundImageURL;
 if (subjectStr == "history") {
   backgroundImageURL = "./assets/parchment-paper-background-vrkkolsv6wuzovg0.jpg";
-  answerButtons.forEach((anchor) => {
-    anchor.style.backgroundColor = '#00008B'
-    anchor.style.borderColor = '#00008B'
-  });
 } else if (subjectStr == "geography") {
   backgroundImageURL = "./assets/geographyBG.jpg"
-  answerButtons.forEach((anchor) => {
-    anchor.style.backgroundColor = '#DC143C'
-    anchor.style.borderColor = '#DC143C'
-  });
 } else if (subjectStr == "art") {
   backgroundImageURL = "./assets/art.jpg"
-  answerButtons.forEach((anchor) => {
-    anchor.style.backgroundColor = '#4B0082'
-    anchor.style.borderColor = '#4B0082'
-  });
 }
 const backgroundChange = document.getElementById("answerContainer")
 backgroundChange.style.backgroundImage = `url(${backgroundImageURL})`
