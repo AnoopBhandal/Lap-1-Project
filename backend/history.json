@@ -40,14 +40,6 @@
     "false3": "Galleon"
   },
   {
-    "qNumber": 6,
-    "question": "What type of boats did the Vikings use when exploring and raiding?",
-    "answer": "Longships",
-    "false1": "Short ships",
-    "false2": "Sail Boats",
-    "false3": "Galleon"
-  },
-  {
     "qNumber": 7,
     "question": "In what year was the Concorde's first flight?",
     "answer": "1969",
@@ -57,14 +49,6 @@
   },
   {
     "qNumber": 8,
-    "question": "What language was spoken in Ancient Rome?",
-    "answer": "Latin",
-    "false1": "Italian",
-    "false2": "Ancient Greece",
-    "false3": "Ancient Egyptian"
-  },
-  {
-    "qNumber": 9,
     "question": "What language was spoken in Ancient Rome?",
     "answer": "Latin",
     "false1": "Italian",
@@ -94,14 +78,6 @@
     "false1": "Hot Air Ballon",
     "false2": "Blimp",
     "false3": "Ornithopter"
-  },
-  {
-    "qNumber": 13,
-    "question": "The Hindenburg Disaster involved what type of German airship?",
-    "answer": "Zeppelin",
-    "false1": "Hot Air Ballon",
-    "false2": "Blimp",
-    "false3": "ornithopter"
   },
   {
     "qNumber": 14,
