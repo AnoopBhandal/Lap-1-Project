@@ -50,14 +50,39 @@ const wrongAnswer = () => {
   false2Button.remove()
   false3Button.remove()
   console.log("Wrong answer")
+
   //add two buttons (with links for play again and home)
   let myDiv = document.getElementById("buttonDiv")
-  let restartButton = document.createElement("button")
+  let homeButton = document.createElement("a");
+  homeButton.classList.add("btn", "btn-primary")
+  let text2 = document.createTextNode("Home")
+  homeButton.href = "http://127.0.0.1:5500/frontend/index.html";
+  homeButton.appendChild(text2)
+  myDiv.appendChild(homeButton)
+  let restartButton = document.createElement("a");
+  restartButton.classList.add("btn", "btn-primary")
   let text = document.createTextNode("Restart")
   restartButton.appendChild(text)
   myDiv.appendChild(restartButton)
-  restartButton.style.backgroundColor = "blue"
+  
+  if (subjectStr == "history") {
+    restartButton.style.backgroundColor = '#00008B'
+    restartButton.style.borderColor = '#00008B'
+    homeButton.style.backgroundColor = '#00008B'
+    homeButton.style.borderColor = '#00008B'
+  } else if (subjectStr == "geography") {
+    restartButton.style.backgroundColor = '#DC143C'
+    restartButton.style.borderColor = '#DC143C'
+    homeButton.style.backgroundColor = '#DC143C'
+    homeButton.style.borderColor = '#DC143C'
+  } else if (subjectStr == "art") {
+    restartButton.style.backgroundColor = '#4B0082'
+    restartButton.style.borderColor = '#4B0082'
+    homeButton.style.backgroundColor = '#4B0082'
+    homeButton.style.borderColor = '#4B0082'
+  }
   restartButton.addEventListener("click", () => { location.reload(true) })
+
 }
 const randomButtons = () => {
   let placeId = []
@@ -155,14 +180,38 @@ const askQuestion = async () => {
     false1Button.remove()
     false2Button.remove()
     false3Button.remove()
+    
     //add two buttons (with links for play again and home)
-    let myDiv = document.getElementById("buttonDiv")
-    let restartButton = document.createElement("button")
-    let text = document.createTextNode("Restart")
-    restartButton.appendChild(text)
-    myDiv.appendChild(restartButton)
-    restartButton.style.backgroundColor = "red";
-    restartButton.addEventListener("click", () => { location.reload(true) })
+  let myDiv = document.getElementById("buttonDiv")
+  let homeButton = document.createElement("a");
+  homeButton.classList.add("btn", "btn-primary")
+  let text2 = document.createTextNode("Home")
+  homeButton.href = "http://127.0.0.1:5500/frontend/index.html";
+  homeButton.appendChild(text2)
+  myDiv.appendChild(homeButton)
+  let restartButton = document.createElement("a");
+  restartButton.classList.add("btn", "btn-primary")
+  let text = document.createTextNode("Restart")
+  restartButton.appendChild(text)
+  myDiv.appendChild(restartButton)
+  
+  if (subjectStr == "history") {
+    restartButton.style.backgroundColor = '#00008B'
+    restartButton.style.borderColor = '#00008B'
+    homeButton.style.backgroundColor = '#00008B'
+    homeButton.style.borderColor = '#00008B'
+  } else if (subjectStr == "geography") {
+    restartButton.style.backgroundColor = '#DC143C'
+    restartButton.style.borderColor = '#DC143C'
+    homeButton.style.backgroundColor = '#DC143C'
+    homeButton.style.borderColor = '#DC143C'
+  } else if (subjectStr == "art") {
+    restartButton.style.backgroundColor = '#4B0082'
+    restartButton.style.borderColor = '#4B0082'
+    homeButton.style.backgroundColor = '#4B0082'
+    homeButton.style.borderColor = '#4B0082'
+  }
+  restartButton.addEventListener("click", () => { location.reload(true) })
   }
 }
 askQuestion();
