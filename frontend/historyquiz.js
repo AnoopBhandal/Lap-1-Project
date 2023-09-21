@@ -197,8 +197,13 @@ if (subjectStr == "history") {
 } else if (subjectStr == "art") {
   backgroundImageURL = "./assets/art.jpg"
   answerButtons.forEach((anchor) => {
+    anchor.style.display = "flex"
     anchor.style.backgroundColor = '#4B0082'
     anchor.style.borderColor = '#4B0082'
+    anchor.style.justifyContent = "center"
+    anchor.style.alignItems = "center"
+    anchor.style.fontSize = "50"
+    anchor.style.minWidth = "800px"
   });
 }
 const backgroundChange = document.getElementById("answerContainer")
