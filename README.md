@@ -5,6 +5,7 @@ An educational multiple choice game, aimed at secondary school, non-STEM student
 ## Installation & Usage
 ### Installation
 - Clone the repo.
+(add what needs to be installed)
 
 ### Usage
 - Open the terminal.

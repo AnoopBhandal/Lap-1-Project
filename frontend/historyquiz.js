@@ -64,7 +64,7 @@ const wrongAnswer = () => {
   let text = document.createTextNode("Restart")
   restartButton.appendChild(text)
   myDiv.appendChild(restartButton)
-  
+
   if (subjectStr == "history") {
     restartButton.style.backgroundColor = '#00008B'
     restartButton.style.borderColor = '#00008B'
@@ -128,10 +128,38 @@ const askQuestion = async () => {
     question.textContent = subJson[randomArray[i]].question;
     let buttonDiv = document.getElementById("buttonDiv")
     let buttonDiv2 = document.getElementById("buttonDiv2")
-    answerButton = document.createElement("button")
-    false1Button = document.createElement("button")
-    false2Button = document.createElement("button")
-    false3Button = document.createElement("button")
+    answerButton = document.createElement("a")
+    false1Button = document.createElement("a")
+    false2Button = document.createElement("a")
+    false3Button = document.createElement("a")
+    let buttonArr = [answerButton, false1Button, false2Button, false3Button];
+    buttonArr.forEach((el) => el.classList.add("btn", "btn-primary"))
+    answerButton.style.backgroundColor = '#00008B';
+    if (subjectStr == "history") {
+      buttonArr.forEach((el) => {
+        el.style.backgroundColor = '#00008B'
+        el.style.borderColor = '#00008B'})
+    } else if (subjectStr == "geography") {
+      buttonArr.forEach((el) => {
+        el.style.backgroundColor = '#DC143C'
+        el.style.borderColor = '#DC143C'})
+    } else if (subjectStr == "art") {
+      buttonArr.forEach((el) => {
+        el.style.backgroundColor = '#4B0082'
+        el.style.borderColor = '#4B0082'})
+    }
+    
+    // if (subjectStr == "history") {
+    //   buttonArr.forEach((el) =>
+    //   el.style.backgroundColor = '#00008B';
+    //   el.style.borderColor = '#00008B')
+    // } else if (subjectStr == "geography") {
+  //     buttonArr.forEach((el)=> el.style.backgroundColor = '#DC143C'
+  //     el.style.borderColor = '#DC143C')
+  //  } else if (subjectStr == "art") {
+  //     buttonArr.forEach((el)=> el.style.backgroundColor = '#4B0082'
+  //     el.style.borderColor = '#4B0082')
+  //   }
     let answerText = document.createTextNode(subJson[randomArray[i]].answer)
     let false1Text = document.createTextNode(subJson[randomArray[i]].false1)
     let false2Text = document.createTextNode(subJson[randomArray[i]].false2)
@@ -180,38 +208,38 @@ const askQuestion = async () => {
     false1Button.remove()
     false2Button.remove()
     false3Button.remove()
-    
+
     //add two buttons (with links for play again and home)
-  let myDiv = document.getElementById("buttonDiv")
-  let homeButton = document.createElement("a");
-  homeButton.classList.add("btn", "btn-primary")
-  let text2 = document.createTextNode("Home")
-  homeButton.href = "http://127.0.0.1:5500/frontend/index.html";
-  homeButton.appendChild(text2)
-  myDiv.appendChild(homeButton)
-  let restartButton = document.createElement("a");
-  restartButton.classList.add("btn", "btn-primary")
-  let text = document.createTextNode("Restart")
-  restartButton.appendChild(text)
-  myDiv.appendChild(restartButton)
-  
-  if (subjectStr == "history") {
-    restartButton.style.backgroundColor = '#00008B'
-    restartButton.style.borderColor = '#00008B'
-    homeButton.style.backgroundColor = '#00008B'
-    homeButton.style.borderColor = '#00008B'
-  } else if (subjectStr == "geography") {
-    restartButton.style.backgroundColor = '#DC143C'
-    restartButton.style.borderColor = '#DC143C'
-    homeButton.style.backgroundColor = '#DC143C'
-    homeButton.style.borderColor = '#DC143C'
-  } else if (subjectStr == "art") {
-    restartButton.style.backgroundColor = '#4B0082'
-    restartButton.style.borderColor = '#4B0082'
-    homeButton.style.backgroundColor = '#4B0082'
-    homeButton.style.borderColor = '#4B0082'
-  }
-  restartButton.addEventListener("click", () => { location.reload(true) })
+    let myDiv = document.getElementById("buttonDiv")
+    let homeButton = document.createElement("a");
+    homeButton.classList.add("btn", "btn-primary")
+    let text2 = document.createTextNode("Home")
+    homeButton.href = "http://127.0.0.1:5500/frontend/index.html";
+    homeButton.appendChild(text2)
+    myDiv.appendChild(homeButton)
+    let restartButton = document.createElement("a");
+    restartButton.classList.add("btn", "btn-primary")
+    let text = document.createTextNode("Restart")
+    restartButton.appendChild(text)
+    myDiv.appendChild(restartButton)
+
+    if (subjectStr == "history") {
+      restartButton.style.backgroundColor = '#00008B'
+      restartButton.style.borderColor = '#00008B'
+      homeButton.style.backgroundColor = '#00008B'
+      homeButton.style.borderColor = '#00008B'
+    } else if (subjectStr == "geography") {
+      restartButton.style.backgroundColor = '#DC143C'
+      restartButton.style.borderColor = '#DC143C'
+      homeButton.style.backgroundColor = '#DC143C'
+      homeButton.style.borderColor = '#DC143C'
+    } else if (subjectStr == "art") {
+      restartButton.style.backgroundColor = '#4B0082'
+      restartButton.style.borderColor = '#4B0082'
+      homeButton.style.backgroundColor = '#4B0082'
+      homeButton.style.borderColor = '#4B0082'
+    }
+    restartButton.addEventListener("click", () => { location.reload(true) })
   }
 }
 askQuestion();
