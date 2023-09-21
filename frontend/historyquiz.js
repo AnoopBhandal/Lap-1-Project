@@ -9,7 +9,7 @@
 //NEED TO: require API
 
 const searchParams = new URLSearchParams(window.location.search);
-const subjectStr = (searchParams.get('subject')); 
+const subjectStr = (searchParams.get('subject'));
 let subjectLength;
 let subJson;
 
@@ -17,8 +17,8 @@ let subJson;
 
 
 
-async function logSubject(subject){
-  const response = await fetch (`http://localhost:3000/${subject}`)
+async function logSubject(subject) {
+  const response = await fetch(`http://localhost:3000/${subject}`)
   subJson = await response.json()
   subjectLength = await subJson.length;
 }
@@ -28,13 +28,13 @@ let score = 0
 //generates an array of random indexes (for history.json) (without repetition)
 
 let randomArray = [];
-const generateRandomArray = async () =>{
+const generateRandomArray = async () => {
   await logSubject(subjectStr)
-  let arr = [] 
-  for (let i=0; i<subjectLength; i++){ //changed length thing here
+  let arr = []
+  for (let i = 0; i < subjectLength; i++) { //changed length thing here
     arr.push(i)
   }
-  for (let i =arr.length -1; i>0; i--){
+  for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     const temp = arr[i];
     arr[i] = arr[j];
@@ -72,13 +72,35 @@ const wrongAnswer = () => {
   false3.remove()
   //add two buttons (with links for play again and home)
   let myDiv = document.getElementById("buttonDiv")
-    let restartButton = document.createElement("button")
-    let text = document.createTextNode("Restart")
-    restartButton.appendChild(text)
-    myDiv.appendChild(restartButton)
-    restartButton.style.backgroundColor = "blue"
-    restartButton.addEventListener("click", ()=> {location.reload(true)})
-    
+  let homeButton = document.createElement("a");
+  homeButton.classList.add("btn", "btn-primary")
+  let text2 = document.createTextNode("Home")
+  homeButton.href = "http://127.0.0.1:5500/frontend/index.html";
+  homeButton.appendChild(text2)
+  myDiv.appendChild(homeButton)
+  let restartButton = document.createElement("a");
+  restartButton.classList.add("btn", "btn-primary")
+  let text = document.createTextNode("Restart")
+  restartButton.appendChild(text)
+  myDiv.appendChild(restartButton)
+  
+  if (subjectStr == "history") {
+    restartButton.style.backgroundColor = '#00008B'
+    restartButton.style.borderColor = '#00008B'
+    homeButton.style.backgroundColor = '#00008B'
+    homeButton.style.borderColor = '#00008B'
+  } else if (subjectStr == "geography") {
+    restartButton.style.backgroundColor = '#DC143C'
+    restartButton.style.borderColor = '#DC143C'
+    homeButton.style.backgroundColor = '#DC143C'
+    homeButton.style.borderColor = '#DC143C'
+  } else if (subjectStr == "art") {
+    restartButton.style.backgroundColor = '#4B0082'
+    restartButton.style.borderColor = '#4B0082'
+    homeButton.style.backgroundColor = '#4B0082'
+    homeButton.style.borderColor = '#4B0082'
+  }
+  restartButton.addEventListener("click", () => { location.reload(true) })
 }
 
 
@@ -88,7 +110,7 @@ const wrongAnswer = () => {
 let i = -1;
 const askQuestion = async () => {
   await logSubject(subjectStr);
-  j = Math.floor(Math.random()*subjectLength);
+  j = Math.floor(Math.random() * subjectLength);
   if (i < subjectLength - 1) {
     i++
     //array of the choices you can make from the json file
@@ -150,14 +172,35 @@ const askQuestion = async () => {
 
     //add two buttons (with links for play again and home)
     let myDiv = document.getElementById("buttonDiv")
-    let restartButton = document.createElement("button")
-
+    let homeButton = document.createElement("a");
+    homeButton.classList.add("btn", "btn-primary")
+    let text2 = document.createTextNode("Home")
+    homeButton.href = "http://127.0.0.1:5500/frontend/index.html";
+    homeButton.appendChild(text2)
+    myDiv.appendChild(homeButton)
+    let restartButton = document.createElement("a");
+    restartButton.classList.add("btn", "btn-primary")
     let text = document.createTextNode("Restart")
     restartButton.appendChild(text)
     myDiv.appendChild(restartButton)
-    restartButton.style.backgroundColor = "blue";
-    restartButton.addEventListener("click", ()=> {location.reload(true)})
     
+    if (subjectStr == "history") {
+      restartButton.style.backgroundColor = '#00008B'
+      restartButton.style.borderColor = '#00008B'
+      homeButton.style.backgroundColor = '#00008B'
+      homeButton.style.borderColor = '#00008B'
+    } else if (subjectStr == "geography") {
+      restartButton.style.backgroundColor = '#DC143C'
+      restartButton.style.borderColor = '#DC143C'
+      homeButton.style.backgroundColor = '#DC143C'
+      homeButton.style.borderColor = '#DC143C'
+    } else if (subjectStr == "art") {
+      restartButton.style.backgroundColor = '#4B0082'
+      restartButton.style.borderColor = '#4B0082'
+      homeButton.style.backgroundColor = '#4B0082'
+      homeButton.style.borderColor = '#4B0082'
+    }
+    restartButton.addEventListener("click", () => { location.reload(true) })
   }
 }
 
@@ -169,15 +212,15 @@ askQuestion();
 //Adding a timer:
 
 const startingMinutes = 20;
-time = startingMinutes*60;
+time = startingMinutes * 60;
 
-const countdownEl = document.getElementById('countdown') 
+const countdownEl = document.getElementById('countdown')
 
 const updateCountdown = () => {
-  const minutes = Math.floor(time/60);
+  const minutes = Math.floor(time / 60);
   let seconds = time % 60;
 
-  seconds = seconds < 10 ? '0' + seconds:seconds;
+  seconds = seconds < 10 ? '0' + seconds : seconds;
 
   countdownEl.innerHTML = `Timer: ${minutes}:${seconds}`
   document.getElementById('countdown').style.font = "bold 30px arial,serif";
@@ -196,21 +239,21 @@ let backgroundImageURL;
 
 if (subjectStr == "history") {
   backgroundImageURL = "./assets/parchment-paper-background-vrkkolsv6wuzovg0.jpg";
-  
+
   answerButtons.forEach((anchor) => {
     anchor.style.backgroundColor = '#00008B'
     anchor.style.borderColor = '#00008B'
   });
 
-} else if (subjectStr == "geography"){
+} else if (subjectStr == "geography") {
   backgroundImageURL = "./assets/geographyBG.jpg"
 
   answerButtons.forEach((anchor) => {
     anchor.style.backgroundColor = '#DC143C'
     anchor.style.borderColor = '#DC143C'
   });
-  
-} else if (subjectStr == "art"){
+
+} else if (subjectStr == "art") {
   backgroundImageURL = "./assets/art.jpg"
 
   answerButtons.forEach((anchor) => {
@@ -222,7 +265,7 @@ if (subjectStr == "history") {
 const backgroundChange = document.getElementById("answerContainer")
 backgroundChange.style.backgroundImage = `url(${backgroundImageURL})`
 
- 
+
 
 
 
