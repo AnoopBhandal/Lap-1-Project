@@ -34,7 +34,7 @@ An educational multiple choice game, aimed at secondary school, non-STEM student
 - The questions are asked in a random order with no repetitions.
 - One JavaScript file can be used to run all three quizzes.
 ### Challenges
-- Getting the correct answer button to appear in a random position (rather than always appearing in the same position) was challenging.
+- Getting the correct answer button to appear in a random position (rather than always appearing in the same position) was challenging, but we got it to work.
 
 ## Screenshots
 - Home page.
@@ -50,4 +50,3 @@ An educational multiple choice game, aimed at secondary school, non-STEM student
 ## Contribution Guide
 ## Code Snippets
 ## Bugs
-## Future Features
