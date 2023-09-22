@@ -26,6 +26,7 @@ An educational multiple choice game, aimed at secondary school, non-STEM student
 - HTML
 - CSS
 - Bootstrap
+- Nodemon
 - Express
 - Cors
 - Jest
@@ -92,3 +93,6 @@ const generateRandomArray = async () => {
 generateRandomArray()
 ```
 This snippet first defines `randomArray` as an empty array, then calls a function, `generateRandomArray`, which reassigns `randomArray` to a shuffled array of all the number from `0` to `subjectLength - 1`. This is used to give the order that the questions will be asked.
+
+## Bugs
+- When using a smaller screen, the burger doesn't work (only on quiz pages)
